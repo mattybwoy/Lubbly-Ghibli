@@ -9,9 +9,16 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var background: UIImageView!
+    var dataManager = DataManager()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        background.alpha = 0.5
+        background.contentMode = .scaleToFill
+
+        dataManager.getFilms()
+
     }
 
 

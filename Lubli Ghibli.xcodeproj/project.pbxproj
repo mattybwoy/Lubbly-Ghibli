@@ -13,6 +13,8 @@
 		3441F0AE2704F85C00FF4B42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3441F0AC2704F85C00FF4B42 /* Main.storyboard */; };
 		3441F0B02704F85F00FF4B42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3441F0AF2704F85F00FF4B42 /* Assets.xcassets */; };
 		3441F0B32704F85F00FF4B42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3441F0B12704F85F00FF4B42 /* LaunchScreen.storyboard */; };
+		3451E63927078995008D0CEA /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3451E63827078995008D0CEA /* DataManager.swift */; };
+		3451E63E27078DB5008D0CEA /* FilmData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3451E63D27078DB5008D0CEA /* FilmData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		3441F0B22704F85F00FF4B42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3441F0B42704F85F00FF4B42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3441F0BA2704F8DB00FF4B42 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		3451E63827078995008D0CEA /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		3451E63D27078DB5008D0CEA /* FilmData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,13 +64,39 @@
 			children = (
 				3441F0A62704F85C00FF4B42 /* AppDelegate.swift */,
 				3441F0A82704F85C00FF4B42 /* SceneDelegate.swift */,
-				3441F0AA2704F85C00FF4B42 /* ViewController.swift */,
-				3441F0AC2704F85C00FF4B42 /* Main.storyboard */,
+				3451E63B270789A3008D0CEA /* Model */,
+				3451E63727078961008D0CEA /* Controller */,
+				3451E63C270789B6008D0CEA /* View */,
 				3441F0AF2704F85F00FF4B42 /* Assets.xcassets */,
 				3441F0B12704F85F00FF4B42 /* LaunchScreen.storyboard */,
 				3441F0B42704F85F00FF4B42 /* Info.plist */,
 			);
 			path = "Lubli Ghibli";
+			sourceTree = "<group>";
+		};
+		3451E63727078961008D0CEA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3441F0AA2704F85C00FF4B42 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3451E63B270789A3008D0CEA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3451E63827078995008D0CEA /* DataManager.swift */,
+				3451E63D27078DB5008D0CEA /* FilmData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3451E63C270789B6008D0CEA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3441F0AC2704F85C00FF4B42 /* Main.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +170,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3451E63E27078DB5008D0CEA /* FilmData.swift in Sources */,
 				3441F0AB2704F85C00FF4B42 /* ViewController.swift in Sources */,
+				3451E63927078995008D0CEA /* DataManager.swift in Sources */,
 				3441F0A72704F85C00FF4B42 /* AppDelegate.swift in Sources */,
 				3441F0A92704F85C00FF4B42 /* SceneDelegate.swift in Sources */,
 			);
