@@ -17,10 +17,15 @@ class ViewController: UIViewController {
         background.alpha = 0.5
         background.contentMode = .scaleToFill
 
-        dataManager.getFilms()
+        dataManager.getFilms { films in
+            //let filteredFilms = films.filter( {$0.title.contains("Castle") } )
+            for film in films {
+                if film.title.contains("Neighbor"){
+                    print("[\(film.id)] Film: \(film.title)")
+                }
+            }
+        }
 
     }
 
-
 }
-

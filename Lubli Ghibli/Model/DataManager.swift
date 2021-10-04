@@ -7,11 +7,12 @@
 
 import Foundation
 
-struct DataManager {
+class DataManager {
     
-    let baseURL = "https://ghibliapi.herokuapp.com/films/2baf70d1-42bb-4437-b551-e5fed5a87abe"
+    let baseURL = "https://ghibliapi.herokuapp.com/films"
+    var films = [Film]()
     
-    func getFilms() {
+    func getFilms(completion: @escaping ( [Film]) -> Void) {
         
         if let url = URL(string: baseURL) {
             let session = URLSession(configuration: .default)
@@ -19,26 +20,26 @@ struct DataManager {
                 if error != nil {
                     return
                 }
-                if let safeData = data {
-                    if let movie = self.parseJSON(safeData) {
-                        print(movie)
-                    }
+                if let data = data {
+                    self.films = self.parseFilmData(data)
                 }
+                completion(self.films)
             }
             task.resume()
         }
     }
     
-    func parseJSON(_ data: Data) -> String? {
+    func parseFilmData(_ data: Data) -> [Film] {
         let decoder = JSONDecoder()
         do {
-            let decodedData = try decoder.decode(FilmData.self, from: data)
-            let film = decodedData.title
-            print(film)
-            return film
+            let films = try decoder.decode([Film].self, from: data)
+            films.forEach{ film in
+                print(film.id)
+            }
+            return films
         } catch {
             print(error)
-            return nil
+            return []
         }
     }
 }
