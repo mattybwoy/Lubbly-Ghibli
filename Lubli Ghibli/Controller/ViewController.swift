@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
     @IBOutlet var background: UIImageView!
     @IBOutlet var mainHeading: UILabel!
@@ -20,7 +20,8 @@ class ViewController: UIViewController {
         background.alpha = 0.5
         background.contentMode = .scaleToFill
         setupView()
-
+        categoryPicker.delegate = self
+        categoryPicker.dataSource = self
         dataManager.getFilms { films in
             //let filteredFilms = films.filter( {$0.title.contains("Castle") } )
             for film in films {
@@ -40,5 +41,18 @@ class ViewController: UIViewController {
         mainHeading.alpha = 0.8
     }
     
+    let category = ["Films", "People", "Locations", "Species", "Vehicles"]
     
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return category.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return category[row]
+    }
+
 }
