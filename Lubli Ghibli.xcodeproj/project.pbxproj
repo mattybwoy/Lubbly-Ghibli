@@ -15,6 +15,7 @@
 		3441F0B32704F85F00FF4B42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3441F0B12704F85F00FF4B42 /* LaunchScreen.storyboard */; };
 		3451E63927078995008D0CEA /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3451E63827078995008D0CEA /* DataManager.swift */; };
 		3451E63E27078DB5008D0CEA /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3451E63D27078DB5008D0CEA /* Film.swift */; };
+		34AA18A5270B717300D6B0D2 /* ITC Avant Garde Gothic Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 34AA18A4270B717300D6B0D2 /* ITC Avant Garde Gothic Medium.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		3441F0BA2704F8DB00FF4B42 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3451E63827078995008D0CEA /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		3451E63D27078DB5008D0CEA /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
+		34AA18A4270B717300D6B0D2 /* ITC Avant Garde Gothic Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ITC Avant Garde Gothic Medium.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				3441F0AF2704F85F00FF4B42 /* Assets.xcassets */,
 				3441F0B12704F85F00FF4B42 /* LaunchScreen.storyboard */,
 				3441F0B42704F85F00FF4B42 /* Info.plist */,
+				34AA18A4270B717300D6B0D2 /* ITC Avant Garde Gothic Medium.otf */,
 			);
 			path = "Lubli Ghibli";
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34AA18A5270B717300D6B0D2 /* ITC Avant Garde Gothic Medium.otf in Resources */,
 				3441F0B32704F85F00FF4B42 /* LaunchScreen.storyboard in Resources */,
 				3441F0B02704F85F00FF4B42 /* Assets.xcassets in Resources */,
 				3441F0AE2704F85C00FF4B42 /* Main.storyboard in Resources */,
