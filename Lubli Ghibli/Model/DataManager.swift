@@ -11,6 +11,11 @@ class DataManager {
     
     let baseURL = "https://ghibliapi.herokuapp.com/films"
     var films = [Film]()
+    var userSearchTerm: String?
+    
+    init(userSearchTerm: String?) {
+        self.userSearchTerm = userSearchTerm
+    }
     
     func getFilms(completion: @escaping ( [Film]) -> Void) {
         
@@ -33,9 +38,6 @@ class DataManager {
         let decoder = JSONDecoder()
         do {
             let films = try decoder.decode([Film].self, from: data)
-            films.forEach{ film in
-                print(film.id)
-            }
             return films
         } catch {
             print(error)

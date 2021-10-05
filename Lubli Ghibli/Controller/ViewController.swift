@@ -7,30 +7,20 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class ViewController: UIViewController {
 
     @IBOutlet var background: UIImageView!
     @IBOutlet var mainHeading: UILabel!
-    @IBOutlet var categoryPicker: UIPickerView!
+    @IBOutlet var searchField: UITextField!
     
-    var dataManager = DataManager()
+    var dataManager: DataManager?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         background.alpha = 0.5
         background.contentMode = .scaleToFill
         setupView()
-        categoryPicker.delegate = self
-        categoryPicker.dataSource = self
-        dataManager.getFilms { films in
-            //let filteredFilms = films.filter( {$0.title.contains("Castle") } )
-            for film in films {
-                if film.title.contains("Neighbor"){
-                    print("[\(film.id)] Film: \(film.title)")
-                }
-            }
-        }
-
+        searchField.delegate = self
     }
 
     private func setupView() {
@@ -40,19 +30,47 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         mainHeading.textAlignment = .center
         mainHeading.alpha = 0.8
     }
-    
-    let category = ["Films", "People", "Locations", "Species", "Vehicles"]
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return category.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return category[row]
-    }
 
+}
+
+extension ViewController: UITextFieldDelegate {
+    
+    @IBAction func searchFieldPressed(_ sender: UITextField) {
+        searchField.endEditing(true)
+        print(searchField.text!)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        searchField.endEditing(true)
+        print(searchField.text!)
+        return true
+    }
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        if textField.text != "" {
+            return true
+        } else {
+            textField.placeholder = "Type something"
+            return false
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if let userText = searchField.text {
+            dataManager = DataManager(userSearchTerm: userText)
+            dataManager?.getFilms{ films in
+                //let filteredFilms = films.filter( {$0.title.contains("castle") } )
+                //print(filteredFilms)
+                for film in films {
+                    print(film.original_title)
+                    //below line doesn't work
+                    if film.title.contains(userText) {
+                        print(film.title)
+                        //print("[\(film.id)] Film: \(film.title)")
+                    }
+                }
+            }
+        }
+        searchField.text = ""
+    }
 }
