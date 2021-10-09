@@ -15,17 +15,23 @@ class ViewController: UIViewController {
     
     var dataManager: DataManager?
     
+    let font = "ITC Avant Garde Gothic"
+    var imageView = UIImageView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         background.alpha = 0.5
         background.contentMode = .scaleToFill
+        background.translatesAutoresizingMaskIntoConstraints = false
         setupView()
         searchField.delegate = self
+        searchField.backgroundColor = .lightGray
+        searchField.font = UIFont(name: font, size: 20.0)
     }
 
     private func setupView() {
         mainHeading.text = "LUBLI GHIBLI"
-        mainHeading.font = UIFont(name: "ITC Avant Garde Gothic", size: 40.0)
+        mainHeading.font = UIFont(name: font, size: 40.0)
         mainHeading.sizeToFit()
         mainHeading.textAlignment = .center
         mainHeading.alpha = 0.8
@@ -60,13 +66,9 @@ extension ViewController: UITextFieldDelegate {
             dataManager = DataManager(userSearchTerm: userText)
             dataManager?.getFilms{ films in
                 //let filteredFilms = films.filter( {$0.title.contains("castle") } )
-                //print(filteredFilms)
                 for film in films {
-                    print(film.original_title)
-                    //below line doesn't work
-                    if film.title.contains(userText) {
+                    if film.title.lowercased().contains(userText.lowercased()) {
                         print(film.title)
-                        //print("[\(film.id)] Film: \(film.title)")
                     }
                 }
             }
