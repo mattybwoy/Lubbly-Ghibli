@@ -28,15 +28,4 @@ class DataManager {
             print(error)
         }
     }
-    
-    func parseFilmData(_ data: Data) -> [Film] {
-        let decoder = JSONDecoder()
-        do {
-            let films = try decoder.decode([Film].self, from: data)
-            return films
-        } catch {
-            print(error)
-            return []
-        }
-    }
 }
