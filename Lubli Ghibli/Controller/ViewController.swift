@@ -22,6 +22,7 @@ class ViewController: UIViewController, UISearchResultsUpdating, UICollectionVie
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
+        collectionView.backgroundView = background
         background.alpha = 0.5
         background.contentMode = .scaleToFill
         background.translatesAutoresizingMaskIntoConstraints = false
@@ -29,6 +30,8 @@ class ViewController: UIViewController, UISearchResultsUpdating, UICollectionVie
         searchController.searchBar.searchTextField.font = UIFont(name: fontName, size: 15)
         searchController.searchBar.sizeToFit()
         guard let font = UIFont(name: fontName, size: 25) else { return }
+        searchController.searchBar.searchTextField.backgroundColor = .lightGray
+        UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).tintColor = .darkGray
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.darkGray, .font: font]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
         

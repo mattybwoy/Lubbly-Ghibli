@@ -22,7 +22,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uhN-4m-t2v">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="69V-Au-xGn">
                                     <size key="itemSize" width="128" height="128"/>
@@ -45,9 +45,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uhN-4m-t2v" secondAttribute="bottom" id="7pW-tC-BPu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uhN-4m-t2v" secondAttribute="trailing" id="DPx-qc-HR0"/>
                             <constraint firstItem="uhN-4m-t2v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FRM-bN-rgl"/>
+                            <constraint firstAttribute="bottom" secondItem="uhN-4m-t2v" secondAttribute="bottom" id="Ihz-kx-PjU"/>
                             <constraint firstItem="uhN-4m-t2v" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rH9-UY-H6I"/>
                         </constraints>
                     </view>
