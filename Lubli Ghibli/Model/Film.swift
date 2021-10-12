@@ -10,5 +10,6 @@ import Foundation
 struct Film: Decodable {
     let id: String
     let title: String
-    let original_title: String
+    let release_date: String
+    let image: String
 }

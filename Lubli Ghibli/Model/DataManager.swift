@@ -19,18 +19,13 @@ class DataManager {
     
     func getFilms(completion: @escaping ( [Film]) -> Void) {
         
-        if let url = URL(string: baseURL) {
-            let session = URLSession(configuration: .default)
-            let task = session.dataTask(with: url) { (data, response, error ) in
-                if error != nil {
-                    return
-                }
-                if let data = data {
-                    self.films = self.parseFilmData(data)
-                }
-                completion(self.films)
-            }
-            task.resume()
+        guard let fileURL = Bundle.main.url(forResource: "films", withExtension: "json") else { return }
+        do {
+            let data = try Data(contentsOf: fileURL)
+            self.films = try JSONDecoder().decode([Film].self, from: data)
+            completion(self.films)
+        } catch {
+            print(error)
         }
     }
     
