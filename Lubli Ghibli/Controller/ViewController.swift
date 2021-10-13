@@ -22,6 +22,9 @@ class ViewController: UIViewController, UISearchResultsUpdating {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 300, height: 300)
+        collectionView.collectionViewLayout = layout
         searchController.searchResultsUpdater = self
         setupBackground()
         title = "LUBLI GHIBLI"
@@ -79,7 +82,7 @@ extension ViewController: UICollectionViewDataSource {
 extension ViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (view.frame.width/2)-2, height: (view.frame.height/2)-2)
+        return CGSize(width: view.frame.width, height: view.frame.height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -91,6 +94,6 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
 }
