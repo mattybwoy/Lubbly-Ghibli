@@ -28,7 +28,12 @@ class FilmCellCollectionViewCell: UICollectionViewCell {
         image.layer.masksToBounds = true
     }
     
+    func setupFilmTitle() {
+        filmTitle.font = UIFont(name: fontName, size: 15)
+    }
+    
     func setupFilmYear() {
+        filmYear.font = UIFont(name: fontName, size: 15)
         filmYear.alpha = 0.5
     }
 }

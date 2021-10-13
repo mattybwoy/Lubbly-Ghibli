@@ -8,7 +8,7 @@
 import UIKit
 import Nuke
 
-class ViewController: UIViewController, UISearchResultsUpdating {
+class ViewController: UIViewController, UISearchResultsUpdating, UISearchBarDelegate {
     
     @IBOutlet var background: UIImageView!
     
@@ -24,7 +24,7 @@ class ViewController: UIViewController, UISearchResultsUpdating {
         super.viewDidLoad()
         collectionView.dataSource = self
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 300, height: 300)
+        layout.itemSize = CGSize(width: 200, height: 300)
         collectionView.collectionViewLayout = layout
         searchController.searchResultsUpdater = self
         setupBackground()
@@ -33,6 +33,8 @@ class ViewController: UIViewController, UISearchResultsUpdating {
         searchController.searchBar.sizeToFit()
         guard let font = UIFont(name: fontName, size: 28) else { return }
         searchController.searchBar.searchTextField.backgroundColor = .lightGray
+        searchController.searchBar.delegate = self
+
         UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).tintColor = .darkGray
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.darkGray, .font: font]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
@@ -58,7 +60,22 @@ class ViewController: UIViewController, UISearchResultsUpdating {
             })
             self.collectionView.reloadData()
         }
-        
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+//        guard let text = searchBar.text else {
+//            return
+//        }
+//        print(text)
+//        dataManager = DataManager(userSearchTerm: text)
+//        dataManager?.getFilms{ films in
+//            self.films = films.filter({ film in
+//                film.title.contains(text)
+//            })
+//            self.collectionView.reloadData()
+//        }
+        searchController.loadView()
+        print("clicked")
     }
     
     func setupBackground() {
@@ -67,6 +84,7 @@ class ViewController: UIViewController, UISearchResultsUpdating {
         background.contentMode = .scaleToFill
         background.translatesAutoresizingMaskIntoConstraints = false
     }
+    
     
 }
 
@@ -100,6 +118,6 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
+        return UIEdgeInsets(top: 2, left: 20, bottom: 2, right: 2)
     }
 }
