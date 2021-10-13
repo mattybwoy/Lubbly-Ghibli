@@ -19,7 +19,9 @@ class DataManager {
     
     func getFilms(completion: @escaping ( [Film]) -> Void) {
         
-        guard let fileURL = Bundle.main.url(forResource: "films", withExtension: "json") else { return }
+        guard let fileURL = Bundle.main.url(forResource: "films", withExtension: "json") else {
+            return
+        }
         do {
             let data = try Data(contentsOf: fileURL)
             self.films = try JSONDecoder().decode([Film].self, from: data)

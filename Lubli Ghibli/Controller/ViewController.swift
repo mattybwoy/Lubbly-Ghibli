@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Nuke
 
 class ViewController: UIViewController, UISearchResultsUpdating {
     
@@ -39,6 +40,11 @@ class ViewController: UIViewController, UISearchResultsUpdating {
         navigationItem.searchController = searchController
         searchController.becomeFirstResponder()
         collectionView.register(UINib(nibName: "FilmCellCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "filmCell")
+        dataManager = DataManager(userSearchTerm: "")
+        dataManager?.getFilms{ films in
+            self.films = films
+            self.collectionView.reloadData()
+        }
     }
     
     func updateSearchResults(for searchController: UISearchController) {
@@ -72,9 +78,9 @@ extension ViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let collectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "filmCell", for: indexPath) as! FilmCellCollectionViewCell
-        collectionCell.image.image = UIImage(data: try! Data(contentsOf: URL(string: films[indexPath.row].image)!))
-        collectionCell.filmTitle.text = films[indexPath.row].title
-        collectionCell.filmYear.text = films[indexPath.row].release_date
+        Nuke.loadImage(with: URL(string: self.films[indexPath.row].image)!, into: collectionCell.image)
+        collectionCell.filmTitle.text = self.films[indexPath.row].title
+        collectionCell.filmYear.text = self.films[indexPath.row].release_date
         return collectionCell
     }
 }
@@ -94,6 +100,6 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        return UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
     }
 }

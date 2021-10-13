@@ -19,6 +19,7 @@
 		B70A8652271597EB00FF56A1 /* films.json in Resources */ = {isa = PBXBuildFile; fileRef = B70A8651271597EB00FF56A1 /* films.json */; };
 		B70A86552715989500FF56A1 /* FilmCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70A86532715989500FF56A1 /* FilmCellCollectionViewCell.swift */; };
 		B70A86562715989500FF56A1 /* FilmCellCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B70A86542715989500FF56A1 /* FilmCellCollectionViewCell.xib */; };
+		B70A86592717152900FF56A1 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = B70A86582717152900FF56A1 /* Nuke */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B70A86592717152900FF56A1 /* Nuke in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +129,9 @@
 			dependencies = (
 			);
 			name = "Lubli Ghibli";
+			packageProductDependencies = (
+				B70A86582717152900FF56A1 /* Nuke */,
+			);
 			productName = "Lubli Ghibli";
 			productReference = 3441F0A32704F85C00FF4B42 /* Lubli Ghibli.app */;
 			productType = "com.apple.product-type.application";
@@ -155,6 +160,9 @@
 				Base,
 			);
 			mainGroup = 3441F09A2704F85C00FF4B42;
+			packageReferences = (
+				B70A86572717152900FF56A1 /* XCRemoteSwiftPackageReference "Nuke" */,
+			);
 			productRefGroup = 3441F0A42704F85C00FF4B42 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -412,6 +420,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B70A86572717152900FF56A1 /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B70A86582717152900FF56A1 /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B70A86572717152900FF56A1 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3441F09B2704F85C00FF4B42 /* Project object */;
 }
