@@ -20,6 +20,8 @@
 		B70A86552715989500FF56A1 /* FilmCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70A86532715989500FF56A1 /* FilmCellCollectionViewCell.swift */; };
 		B70A86562715989500FF56A1 /* FilmCellCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B70A86542715989500FF56A1 /* FilmCellCollectionViewCell.xib */; };
 		B70A86592717152900FF56A1 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = B70A86582717152900FF56A1 /* Nuke */; };
+		B70A865B2718450000FF56A1 /* FilmDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70A865A2718450000FF56A1 /* FilmDetailViewController.swift */; };
+		B70A865D27185FAB00FF56A1 /* FilmDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B70A865C27185FAB00FF56A1 /* FilmDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		B70A8651271597EB00FF56A1 /* films.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = films.json; sourceTree = "<group>"; };
 		B70A86532715989500FF56A1 /* FilmCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		B70A86542715989500FF56A1 /* FilmCellCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilmCellCollectionViewCell.xib; sourceTree = "<group>"; };
+		B70A865A2718450000FF56A1 /* FilmDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmDetailViewController.swift; sourceTree = "<group>"; };
+		B70A865C27185FAB00FF56A1 /* FilmDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilmDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				3441F0AA2704F85C00FF4B42 /* ViewController.swift */,
+				B70A865A2718450000FF56A1 /* FilmDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -109,6 +114,7 @@
 				3441F0AC2704F85C00FF4B42 /* Main.storyboard */,
 				B70A86532715989500FF56A1 /* FilmCellCollectionViewCell.swift */,
 				B70A86542715989500FF56A1 /* FilmCellCollectionViewCell.xib */,
+				B70A865C27185FAB00FF56A1 /* FilmDetailViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -178,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34AA18A5270B717300D6B0D2 /* ITC Avant Garde Gothic Medium.otf in Resources */,
+				B70A865D27185FAB00FF56A1 /* FilmDetailViewController.xib in Resources */,
 				3441F0B32704F85F00FF4B42 /* LaunchScreen.storyboard in Resources */,
 				B70A86562715989500FF56A1 /* FilmCellCollectionViewCell.xib in Resources */,
 				B70A8652271597EB00FF56A1 /* films.json in Resources */,
@@ -196,6 +203,7 @@
 				3451E63E27078DB5008D0CEA /* Film.swift in Sources */,
 				3441F0AB2704F85C00FF4B42 /* ViewController.swift in Sources */,
 				B70A86552715989500FF56A1 /* FilmCellCollectionViewCell.swift in Sources */,
+				B70A865B2718450000FF56A1 /* FilmDetailViewController.swift in Sources */,
 				3451E63927078995008D0CEA /* DataManager.swift in Sources */,
 				3441F0A72704F85C00FF4B42 /* AppDelegate.swift in Sources */,
 				3441F0A92704F85C00FF4B42 /* SceneDelegate.swift in Sources */,

@@ -43,6 +43,10 @@ class ViewController: UIViewController, UISearchResultsUpdating, UISearchBarDele
         navigationItem.searchController = searchController
         searchController.becomeFirstResponder()
         collectionView.register(UINib(nibName: "FilmCellCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "filmCell")
+        setupCollectionView()
+    }
+    
+    func setupCollectionView() {
         dataManager = DataManager(userSearchTerm: "")
         dataManager?.getFilms{ films in
             self.films = films
@@ -51,7 +55,7 @@ class ViewController: UIViewController, UISearchResultsUpdating, UISearchBarDele
     }
     
     func updateSearchResults(for searchController: UISearchController) {
-        guard let text = searchController.searchBar.text else {
+        guard let text = searchController.searchBar.text, !text.isEmpty else {
             return
         }
         dataManager = DataManager(userSearchTerm: text)
@@ -64,19 +68,7 @@ class ViewController: UIViewController, UISearchResultsUpdating, UISearchBarDele
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-//        guard let text = searchBar.text else {
-//            return
-//        }
-//        print(text)
-//        dataManager = DataManager(userSearchTerm: text)
-//        dataManager?.getFilms{ films in
-//            self.films = films.filter({ film in
-//                film.title.contains(text)
-//            })
-//            self.collectionView.reloadData()
-//        }
-        searchController.loadView()
-        print("clicked")
+        setupCollectionView()
     }
     
     func setupBackground() {
@@ -120,5 +112,14 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
+    }
+}
+
+extension ViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let film = self.films[indexPath.row]
+        let detailController = FilmDetailViewController(film: film)
+        self.navigationController?.pushViewController(detailController, animated: true)
     }
 }
