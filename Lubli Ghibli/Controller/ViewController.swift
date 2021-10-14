@@ -15,6 +15,7 @@ class ViewController: UIViewController, UISearchResultsUpdating, UISearchBarDele
     @IBOutlet weak var collectionView: UICollectionView!
     
     let searchController = UISearchController(searchResultsController: nil)
+    
     var dataManager: DataManager?
     
     let fontName = "AvantGarde-Medium"
@@ -24,9 +25,11 @@ class ViewController: UIViewController, UISearchResultsUpdating, UISearchBarDele
         super.viewDidLoad()
         collectionView.dataSource = self
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 200, height: 300)
         collectionView.collectionViewLayout = layout
+        
         searchController.searchResultsUpdater = self
+        
+        collectionView.delegate = self
         setupBackground()
         title = "LUBLI GHIBLI"
         searchController.searchBar.searchTextField.font = UIFont(name: fontName, size: 15)
@@ -34,11 +37,9 @@ class ViewController: UIViewController, UISearchResultsUpdating, UISearchBarDele
         guard let font = UIFont(name: fontName, size: 28) else { return }
         searchController.searchBar.searchTextField.backgroundColor = .lightGray
         searchController.searchBar.delegate = self
-
         UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).tintColor = .darkGray
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.darkGray, .font: font]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
-    
         navigationItem.searchController = searchController
         searchController.becomeFirstResponder()
         collectionView.register(UINib(nibName: "FilmCellCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "filmCell")
@@ -106,18 +107,18 @@ extension ViewController: UICollectionViewDataSource {
 extension ViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: view.frame.height)
+        return CGSize(width: 180, height: 250)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 1
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 1
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 2, left: 20, bottom: 2, right: 2)
+        return UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
     }
 }
