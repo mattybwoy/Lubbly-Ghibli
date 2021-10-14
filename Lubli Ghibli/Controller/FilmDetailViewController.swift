@@ -6,10 +6,14 @@
 //
 
 import UIKit
+import Nuke
 
 class FilmDetailViewController: UIViewController {
     
     private let film: Film
+    @IBOutlet var background: UIImageView!
+    
+    @IBOutlet var blurredImageBackground: UIImageView!
     
     init(film: Film) {
         self.film = film
@@ -22,8 +26,17 @@ class FilmDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupBackground()
         title = film.title
+        Nuke.loadImage(with: URL(string: self.film.image)!, into: blurredImageBackground)
+        //blurredImageBackground.image =
         // Do any additional setup after loading the view.
     }
 
+    func setupBackground() {
+        background.image = UIImage(named: "GhibliWallpaper1")
+        background.alpha = 0.5
+        background.contentMode = .scaleToFill
+        background.translatesAutoresizingMaskIntoConstraints = false
+    }
 }

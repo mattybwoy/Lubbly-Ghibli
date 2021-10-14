@@ -18,6 +18,7 @@ class FilmCellCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setupImage()
+        setupFilmTitle()
         setupFilmYear()
     }
     
