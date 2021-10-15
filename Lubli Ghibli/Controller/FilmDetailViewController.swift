@@ -11,7 +11,10 @@ import Nuke
 class FilmDetailViewController: UIViewController {
     
     private let film: Film
-    @IBOutlet var background: UIImageView!
+    @IBOutlet var filmYear: UILabel!
+    @IBOutlet var filmTitle: UILabel!
+    @IBOutlet var filmDescriptionLabel: UILabel!
+    @IBOutlet var filmDescription: UILabel!
     
     @IBOutlet var blurredImageBackground: UIImageView!
     
@@ -26,17 +29,15 @@ class FilmDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupBackground()
         title = film.title
         Nuke.loadImage(with: URL(string: self.film.image)!, into: blurredImageBackground)
-        //blurredImageBackground.image =
-        // Do any additional setup after loading the view.
-    }
+        filmTitle.text = film.title
+        filmYear.text = film.release_date
+        filmDescriptionLabel.text = "Description"
+        filmDescription.numberOfLines = 0
+        filmDescription.text = film.description
 
-    func setupBackground() {
-        background.image = UIImage(named: "GhibliWallpaper1")
-        background.alpha = 0.5
-        background.contentMode = .scaleToFill
-        background.translatesAutoresizingMaskIntoConstraints = false
     }
+    
+    
 }

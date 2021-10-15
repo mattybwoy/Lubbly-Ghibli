@@ -10,8 +10,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FilmDetailViewController" customModule="Lubli_Ghibli" customModuleProvider="target">
             <connections>
-                <outlet property="background" destination="aaA-Zy-Q3z" id="7yZ-Dd-cVk"/>
                 <outlet property="blurredImageBackground" destination="8nV-5j-OJn" id="jb6-m7-gCY"/>
+                <outlet property="filmDescription" destination="vid-Qa-dDd" id="wMP-f9-Y8Z"/>
+                <outlet property="filmDescriptionLabel" destination="Arv-ef-Bkb" id="drG-f8-2ej"/>
+                <outlet property="filmTitle" destination="fRQ-VY-Fse" id="XMk-vt-80g"/>
+                <outlet property="filmYear" destination="0VE-mf-iLQ" id="gCG-eh-NcG"/>
                 <outlet property="view" destination="iN0-l3-epB" id="VmU-Dv-ROR"/>
             </connections>
         </placeholder>
@@ -23,20 +26,41 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8nV-5j-OJn">
                     <rect key="frame" x="0.0" y="31" width="414" height="339"/>
                 </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aaA-Zy-Q3z">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRQ-VY-Fse">
+                    <rect key="frame" x="42" y="412" width="180" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0VE-mf-iLQ">
+                    <rect key="frame" x="328" y="412" width="42" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Arv-ef-Bkb">
+                    <rect key="frame" x="42" y="455" width="121" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vid-Qa-dDd">
+                    <rect key="frame" x="42" y="484" width="328" height="185"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="aaA-Zy-Q3z" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="5pX-Gz-Twt"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="8nV-5j-OJn" secondAttribute="bottom" constant="492" id="KSK-Nv-Lut"/>
-                <constraint firstAttribute="trailing" secondItem="aaA-Zy-Q3z" secondAttribute="trailing" id="Mx8-6s-emf"/>
                 <constraint firstItem="8nV-5j-OJn" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="31" id="Smv-Z5-PWe"/>
                 <constraint firstItem="8nV-5j-OJn" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="UpJ-nB-Bqd"/>
-                <constraint firstAttribute="bottom" secondItem="aaA-Zy-Q3z" secondAttribute="bottom" id="eW1-bw-Mtf"/>
-                <constraint firstItem="aaA-Zy-Q3z" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="nDn-88-rAO"/>
                 <constraint firstItem="8nV-5j-OJn" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="w3k-1y-zxx"/>
             </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="131.91964285714286"/>

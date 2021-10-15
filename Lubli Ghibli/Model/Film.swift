@@ -12,4 +12,9 @@ struct Film: Decodable {
     let title: String
     let release_date: String
     let image: String
+    let description: String
+//    let director: String
+//    let runtime: Int
+//    let imdb_Link: String
+//    let imdb_score: String
 }
