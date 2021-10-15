@@ -13,9 +13,11 @@ class FilmDetailViewController: UIViewController {
     private let film: Film
     @IBOutlet var filmYear: UILabel!
     @IBOutlet var filmTitle: UILabel!
+    @IBOutlet var filmDirector: UILabel!
     @IBOutlet var filmDescriptionLabel: UILabel!
-    @IBOutlet var filmDescription: UILabel!
-    
+    @IBOutlet var runtimeLabel: UILabel!
+    @IBOutlet var filmDescription: UITextView!
+    @IBOutlet var runtime: UILabel!
     @IBOutlet var blurredImageBackground: UIImageView!
     
     init(film: Film) {
@@ -33,11 +35,11 @@ class FilmDetailViewController: UIViewController {
         Nuke.loadImage(with: URL(string: self.film.image)!, into: blurredImageBackground)
         filmTitle.text = film.title
         filmYear.text = film.release_date
+        filmDirector.text = film.director
         filmDescriptionLabel.text = "Description"
-        filmDescription.numberOfLines = 0
         filmDescription.text = film.description
-
+        runtimeLabel.text = "Runtime"
+        runtime.text = String(film.runtime)
     }
-    
-    
+
 }
