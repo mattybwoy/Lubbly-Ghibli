@@ -15,6 +15,5 @@ struct Film: Decodable {
     let description: String
     let director: String
     let runtime: Int
-//    let imdb_Link: String
-//    let imdb_score: String
+    let imdb_link: String
 }

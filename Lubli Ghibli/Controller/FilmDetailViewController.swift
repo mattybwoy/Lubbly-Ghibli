@@ -7,6 +7,7 @@
 
 import UIKit
 import Nuke
+import SafariServices
 
 class FilmDetailViewController: UIViewController {
     
@@ -18,6 +19,7 @@ class FilmDetailViewController: UIViewController {
     @IBOutlet var runtimeLabel: UILabel!
     @IBOutlet var filmDescription: UITextView!
     @IBOutlet var runtime: UILabel!
+    @IBOutlet var imdbLink: UIButton!
     @IBOutlet var blurredImageBackground: UIImageView!
     
     init(film: Film) {
@@ -40,6 +42,16 @@ class FilmDetailViewController: UIViewController {
         filmDescription.text = film.description
         runtimeLabel.text = "Runtime"
         runtime.text = String(film.runtime)
+        imdbLink.setTitle("Go to IMDB" , for: .normal)
+        imdbLink.setTitleColor(.systemBlue, for: .normal)
+        imdbLink.setTitleColor(UIColor.systemBlue.withAlphaComponent(0.9), for: .highlighted)
     }
 
+    @IBAction func imdbButtonTapped(_ sender: UIButton) {
+        if let url = URL(string: film.imdb_link) {
+            let sfSafariVC = SFSafariViewController(url: url)
+            present(sfSafariVC, animated: true)
+        }
+    }
+    
 }

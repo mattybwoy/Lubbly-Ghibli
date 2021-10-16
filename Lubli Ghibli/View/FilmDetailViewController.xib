@@ -16,6 +16,7 @@
                 <outlet property="filmDirector" destination="yHf-ec-b6k" id="ubX-rK-CvW"/>
                 <outlet property="filmTitle" destination="fRQ-VY-Fse" id="XMk-vt-80g"/>
                 <outlet property="filmYear" destination="0VE-mf-iLQ" id="gCG-eh-NcG"/>
+                <outlet property="imdbLink" destination="fza-PW-Tha" id="gGm-KK-NbJ"/>
                 <outlet property="runtime" destination="mKa-hI-8oL" id="XLG-Vn-Deg"/>
                 <outlet property="runtimeLabel" destination="DGd-Y7-MaX" id="0gb-9d-BxG"/>
                 <outlet property="view" destination="iN0-l3-epB" id="VmU-Dv-ROR"/>
@@ -80,6 +81,15 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fza-PW-Tha">
+                    <rect key="frame" x="148" y="769" width="118" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                    <connections>
+                        <action selector="imdbButtonTapped:" destination="-1" eventType="touchUpInside" id="Jy6-jL-AsZ"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
