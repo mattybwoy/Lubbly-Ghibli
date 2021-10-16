@@ -11,8 +11,12 @@ To programmatically create an iOS app using the [Studio Ghibli API](https://ghib
 ## Progress
 - Data now fetched from hardcoded JSON, API call made using Nuke for image loading.
 - CollectionView now working and displaying film data cards
+- General layout of each film card now completed
+- IMDB links now operational in safari
 
 ## Improvements
+- Text formatting
+- Layout constraints
 
 ## Installation
 - Clone repository
