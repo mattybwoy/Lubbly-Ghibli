@@ -22,6 +22,8 @@ class FilmDetailViewController: UIViewController {
     @IBOutlet var imdbLink: UIButton!
     @IBOutlet var blurredImageBackground: UIImageView!
     
+    let fontName = "AvantGarde-Medium"
+    
     init(film: Film) {
         self.film = film
         super.init(nibName: "FilmDetailViewController", bundle: .main)
@@ -33,9 +35,11 @@ class FilmDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.tintColor = .darkGray
         title = film.title
         Nuke.loadImage(with: URL(string: self.film.image)!, into: blurredImageBackground)
         filmTitle.text = film.title
+        filmTitle.font = UIFont.boldSystemFont(ofSize: 20)
         filmYear.text = film.release_date
         filmDirector.text = film.director
         filmDescriptionLabel.text = "Description"

@@ -28,7 +28,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8nV-5j-OJn">
-                    <rect key="frame" x="0.0" y="31" width="414" height="339"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="326"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRQ-VY-Fse">
                     <rect key="frame" x="42" y="412" width="180" height="21"/>
@@ -95,8 +95,8 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="8nV-5j-OJn" secondAttribute="bottom" constant="492" id="KSK-Nv-Lut"/>
-                <constraint firstItem="8nV-5j-OJn" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="31" id="Smv-Z5-PWe"/>
                 <constraint firstItem="8nV-5j-OJn" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="UpJ-nB-Bqd"/>
+                <constraint firstItem="8nV-5j-OJn" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="uYR-kM-OS7"/>
                 <constraint firstItem="8nV-5j-OJn" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="w3k-1y-zxx"/>
             </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="131.91964285714286"/>
