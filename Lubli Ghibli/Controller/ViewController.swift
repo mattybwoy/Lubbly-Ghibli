@@ -119,7 +119,6 @@ extension ViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let film = self.films[indexPath.row]
-        print(film)
         let detailController = FilmDetailViewController(film: film)
         self.navigationController?.pushViewController(detailController, animated: true)
     }
