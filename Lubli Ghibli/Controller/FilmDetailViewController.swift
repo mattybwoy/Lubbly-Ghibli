@@ -37,7 +37,6 @@ class FilmDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(contentView)
-        contentView.backgroundColor = .systemRed
         
         navigationController?.navigationBar.tintColor = .darkGray
         title = film.title
