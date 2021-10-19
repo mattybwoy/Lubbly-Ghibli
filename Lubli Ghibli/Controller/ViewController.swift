@@ -28,7 +28,6 @@ class ViewController: UIViewController, UISearchResultsUpdating, UISearchBarDele
         collectionView.collectionViewLayout = layout
         
         searchController.searchResultsUpdater = self
-        
         collectionView.delegate = self
         setupBackground()
         title = "LUBLI GHIBLI"

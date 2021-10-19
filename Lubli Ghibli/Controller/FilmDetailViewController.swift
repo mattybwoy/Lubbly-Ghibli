@@ -24,6 +24,8 @@ class FilmDetailViewController: UIViewController {
     
     let fontName = "AvantGarde-Medium"
     
+    private let contentView = UIView()
+    
     init(film: Film) {
         self.film = film
         super.init(nibName: "FilmDetailViewController", bundle: .main)
@@ -35,17 +37,20 @@ class FilmDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addSubview(contentView)
+        //contentView.backgroundColor = .systemRed
+        
         navigationController?.navigationBar.tintColor = .darkGray
         title = film.title
         Nuke.loadImage(with: URL(string: self.film.image)!, into: blurredImageBackground)
-        filmTitle.font = UIFont.boldSystemFont(ofSize: 20)
+        filmTitle.font = UIFont.boldSystemFont(ofSize: 22)
         filmTitle.font = UIFont(name: fontName, size: 20)
         filmTitle.text = film.title
 
         filmTitle.sizeToFit()
         filmYear.font = UIFont(name: fontName, size: 14)
         filmYear.text = film.release_date
-        filmDirector.font = UIFont(name: fontName, size: 16)
+        filmDirector.font = UIFont(name: fontName, size: 15)
         filmDirector.text = film.director
         filmDescriptionLabel.font = UIFont.boldSystemFont(ofSize: 18)
         filmDescriptionLabel.font = UIFont(name: fontName, size: 18)
@@ -58,7 +63,25 @@ class FilmDetailViewController: UIViewController {
         runtime.text = String(film.runtime)
         imdbLink.setTitle("Go to IMDB" , for: .normal)
         imdbLink.setTitleColor(.systemBlue, for: .normal)
-        imdbLink.setTitleColor(UIColor.systemBlue.withAlphaComponent(0.9), for: .highlighted)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewSafeAreaInsetsDidChange()
+        contentView.frame = CGRect(x: 0, y: 90, width: view.frame.size.width, height: 315)
+        let backgroundImageView = UIImageView(frame: contentView.bounds)
+        backgroundImageView.contentMode = .scaleToFill
+        contentView.addSubview(backgroundImageView)
+
+        backgroundImageView.image = UIImage(named: film.image)
+        contentView.sendSubviewToBack(backgroundImageView)
+        
+        let blur = UIBlurEffect(style: .light)
+        let blurView = UIVisualEffectView(effect: blur)
+        blurView.frame = contentView.bounds
+        contentView.addSubview(blurView)
+        
+        contentView.sendSubviewToBack(blurView)
+        contentView.sendSubviewToBack(backgroundImageView)
     }
 
     @IBAction func imdbButtonTapped(_ sender: UIButton) {
