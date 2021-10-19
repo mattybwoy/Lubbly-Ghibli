@@ -20,7 +20,6 @@ class FilmDetailViewController: UIViewController {
     @IBOutlet var filmDescription: UITextView!
     @IBOutlet var runtime: UILabel!
     @IBOutlet var imdbLink: UIButton!
-    @IBOutlet var blurredImageBackground: UIImageView!
     
     let fontName = "AvantGarde-Medium"
     
@@ -38,11 +37,10 @@ class FilmDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(contentView)
-        //contentView.backgroundColor = .systemRed
+        contentView.backgroundColor = .systemRed
         
         navigationController?.navigationBar.tintColor = .darkGray
         title = film.title
-        Nuke.loadImage(with: URL(string: self.film.image)!, into: blurredImageBackground)
         filmTitle.font = UIFont.boldSystemFont(ofSize: 22)
         filmTitle.font = UIFont(name: fontName, size: 20)
         filmTitle.text = film.title
@@ -68,11 +66,19 @@ class FilmDetailViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewSafeAreaInsetsDidChange()
         contentView.frame = CGRect(x: 0, y: 90, width: view.frame.size.width, height: 315)
+        
+        let imageView = UIImageView(frame: CGRect(x: (view.frame.size.width-180)/2, y: (contentView.frame.size.height-250)/2, width: 180, height: 250))
+        imageView.backgroundColor = .white
+        imageView.layer.masksToBounds = true
+        imageView.layer.cornerRadius = 20
+        Nuke.loadImage(with: URL(string: self.film.image)!, into: imageView)
+        contentView.addSubview(imageView)
+        
         let backgroundImageView = UIImageView(frame: contentView.bounds)
         backgroundImageView.contentMode = .scaleToFill
         contentView.addSubview(backgroundImageView)
 
-        backgroundImageView.image = UIImage(named: film.image)
+        Nuke.loadImage(with: URL(string: self.film.image)!, into: backgroundImageView)
         contentView.sendSubviewToBack(backgroundImageView)
         
         let blur = UIBlurEffect(style: .light)
