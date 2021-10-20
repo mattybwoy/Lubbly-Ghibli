@@ -14,6 +14,7 @@ To programmatically create an iOS app using the [Studio Ghibli API](https://ghib
 - General layout of each film card now completed
 - IMDB links now operational in safari
 - Background Blur effect added for film images
+- Swipe right gesture now added to return to collectionView
 
 ## Improvements
 - Layout constraints

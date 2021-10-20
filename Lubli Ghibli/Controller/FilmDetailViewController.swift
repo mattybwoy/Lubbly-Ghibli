@@ -37,6 +37,9 @@ class FilmDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(contentView)
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(swipeFunc(gesture:)))
+        swipeRight.direction = .right
+        view.addGestureRecognizer(swipeRight)
         
         navigationController?.navigationBar.tintColor = .darkGray
         title = film.title
@@ -70,6 +73,7 @@ class FilmDetailViewController: UIViewController {
         imageView.backgroundColor = .white
         imageView.layer.masksToBounds = true
         imageView.layer.cornerRadius = 20
+        imageView.layer.cornerCurve = .continuous
         Nuke.loadImage(with: URL(string: self.film.image)!, into: imageView)
         contentView.addSubview(imageView)
         
@@ -87,6 +91,10 @@ class FilmDetailViewController: UIViewController {
         
         contentView.sendSubviewToBack(blurView)
         contentView.sendSubviewToBack(backgroundImageView)
+    }
+    
+    @objc func swipeFunc(gesture: UISwipeGestureRecognizer) {
+        self.navigationController?.popViewController(animated: true)
     }
 
     @IBAction func imdbButtonTapped(_ sender: UIButton) {
