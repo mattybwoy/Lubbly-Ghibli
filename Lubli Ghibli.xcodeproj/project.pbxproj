@@ -15,9 +15,7 @@
 		3441F0B32704F85F00FF4B42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3441F0B12704F85F00FF4B42 /* LaunchScreen.storyboard */; };
 		3451E63927078995008D0CEA /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3451E63827078995008D0CEA /* DataManager.swift */; };
 		3451E63E27078DB5008D0CEA /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3451E63D27078DB5008D0CEA /* Film.swift */; };
-		34528E662721D3A600FDADEB /* Demo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 34528E632721D3A600FDADEB /* Demo.mp4 */; };
-		34528E672721D3A600FDADEB /* FilmDetailScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 34528E642721D3A600FDADEB /* FilmDetailScreen.png */; };
-		34528E682721D3A600FDADEB /* HomeScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 34528E652721D3A600FDADEB /* HomeScreen.png */; };
+		34528E6A2721D4C300FDADEB /* Documentation in Resources */ = {isa = PBXBuildFile; fileRef = 34528E692721D4C300FDADEB /* Documentation */; };
 		34AA18A5270B717300D6B0D2 /* ITC Avant Garde Gothic Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 34AA18A4270B717300D6B0D2 /* ITC Avant Garde Gothic Medium.otf */; };
 		B70A8652271597EB00FF56A1 /* films.json in Resources */ = {isa = PBXBuildFile; fileRef = B70A8651271597EB00FF56A1 /* films.json */; };
 		B70A86552715989500FF56A1 /* FilmCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70A86532715989500FF56A1 /* FilmCellCollectionViewCell.swift */; };
@@ -39,9 +37,7 @@
 		3441F0BA2704F8DB00FF4B42 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3451E63827078995008D0CEA /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		3451E63D27078DB5008D0CEA /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
-		34528E632721D3A600FDADEB /* Demo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Demo.mp4; sourceTree = "<group>"; };
-		34528E642721D3A600FDADEB /* FilmDetailScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FilmDetailScreen.png; sourceTree = "<group>"; };
-		34528E652721D3A600FDADEB /* HomeScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HomeScreen.png; sourceTree = "<group>"; };
+		34528E692721D4C300FDADEB /* Documentation */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Documentation; sourceTree = SOURCE_ROOT; };
 		34AA18A4270B717300D6B0D2 /* ITC Avant Garde Gothic Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ITC Avant Garde Gothic Medium.otf"; sourceTree = "<group>"; };
 		B70A8651271597EB00FF56A1 /* films.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = films.json; sourceTree = "<group>"; };
 		B70A86532715989500FF56A1 /* FilmCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmCellCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -65,7 +61,6 @@
 		3441F09A2704F85C00FF4B42 = {
 			isa = PBXGroup;
 			children = (
-				34528E622721D3A600FDADEB /* Documentation */,
 				3441F0BA2704F8DB00FF4B42 /* README.md */,
 				3441F0A52704F85C00FF4B42 /* Lubli Ghibli */,
 				3441F0A42704F85C00FF4B42 /* Products */,
@@ -83,6 +78,7 @@
 		3441F0A52704F85C00FF4B42 /* Lubli Ghibli */ = {
 			isa = PBXGroup;
 			children = (
+				34528E692721D4C300FDADEB /* Documentation */,
 				3441F0A62704F85C00FF4B42 /* AppDelegate.swift */,
 				3441F0A82704F85C00FF4B42 /* SceneDelegate.swift */,
 				3451E63B270789A3008D0CEA /* Model */,
@@ -124,16 +120,6 @@
 				B70A865C27185FAB00FF56A1 /* FilmDetailViewController.xib */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		34528E622721D3A600FDADEB /* Documentation */ = {
-			isa = PBXGroup;
-			children = (
-				34528E632721D3A600FDADEB /* Demo.mp4 */,
-				34528E642721D3A600FDADEB /* FilmDetailScreen.png */,
-				34528E652721D3A600FDADEB /* HomeScreen.png */,
-			);
-			path = Documentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,15 +187,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				34AA18A5270B717300D6B0D2 /* ITC Avant Garde Gothic Medium.otf in Resources */,
-				34528E672721D3A600FDADEB /* FilmDetailScreen.png in Resources */,
-				34528E682721D3A600FDADEB /* HomeScreen.png in Resources */,
 				B70A865D27185FAB00FF56A1 /* FilmDetailViewController.xib in Resources */,
 				3441F0B32704F85F00FF4B42 /* LaunchScreen.storyboard in Resources */,
 				B70A86562715989500FF56A1 /* FilmCellCollectionViewCell.xib in Resources */,
-				34528E662721D3A600FDADEB /* Demo.mp4 in Resources */,
 				B70A8652271597EB00FF56A1 /* films.json in Resources */,
 				3441F0B02704F85F00FF4B42 /* Assets.xcassets in Resources */,
 				3441F0AE2704F85C00FF4B42 /* Main.storyboard in Resources */,
+				34528E6A2721D4C300FDADEB /* Documentation in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
