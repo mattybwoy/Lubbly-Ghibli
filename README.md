@@ -5,7 +5,7 @@ Lubli Ghibli
 </h1>
 
 ## Objective
-To programmatically create an iOS app using the [Studio Ghibli API](https://ghibliapi.herokuapp.com/) and to render results in a collectionView.
+To half programmatically create an iOS app using the data provided from the [Studio Ghibli API](https://ghibliapi.herokuapp.com/) and to render results in a collectionView. Inspiration and images courtesy of https://github.com/kxvn-lx/Ghibliii
 
 
 ## Progress
@@ -23,6 +23,10 @@ To programmatically create an iOS app using the [Studio Ghibli API](https://ghib
 - Clone repository
 
 ## Screenshots
+![HomeScreen](Documentation/HomeScreen.png)
+![Film Detail Screen](Documentation/FilmDetailScreen.png)
+
+## Demo
 
 ## Tech Stack
 Swift
