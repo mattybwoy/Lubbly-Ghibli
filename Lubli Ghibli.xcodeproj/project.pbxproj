@@ -36,9 +36,9 @@
 		3441F0BA2704F8DB00FF4B42 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3451E63827078995008D0CEA /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		3451E63D27078DB5008D0CEA /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
-		34528E7C2721D7AC00FDADEB /* Demo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Demo.mp4; sourceTree = "<group>"; };
 		34528E7D2721D7AC00FDADEB /* FilmDetailScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FilmDetailScreen.png; sourceTree = "<group>"; };
 		34528E7E2721D7AC00FDADEB /* HomeScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HomeScreen.png; sourceTree = "<group>"; };
+		34528E7F2722BEC100FDADEB /* Demo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Demo.gif; sourceTree = "<group>"; };
 		34AA18A4270B717300D6B0D2 /* ITC Avant Garde Gothic Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ITC Avant Garde Gothic Medium.otf"; sourceTree = "<group>"; };
 		B70A8651271597EB00FF56A1 /* films.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = films.json; sourceTree = "<group>"; };
 		B70A86532715989500FF56A1 /* FilmCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmCellCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -126,7 +126,7 @@
 		34528E7B2721D7AC00FDADEB /* Documentation */ = {
 			isa = PBXGroup;
 			children = (
-				34528E7C2721D7AC00FDADEB /* Demo.mp4 */,
+				34528E7F2722BEC100FDADEB /* Demo.gif */,
 				34528E7D2721D7AC00FDADEB /* FilmDetailScreen.png */,
 				34528E7E2721D7AC00FDADEB /* HomeScreen.png */,
 			);
