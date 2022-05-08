@@ -27,10 +27,17 @@ To half programmatically create an iOS app using the data provided from the [Stu
 ![Film Detail Screen](Documentation/FilmDetailScreen.png)
 
 ## Demo
-![WorkingDemo](Documentation/Demo.gif)
+![WorkingDemo](Documentation/Demo.gif)Model
 
 ## Tech Stack
-Swift
+Swift, UIKit
+
+## Dependencies
+- Nuke
+- SafariServices
+
+## Simulator Version
+11
 
 ## Collaborators
 @mattybwoy
