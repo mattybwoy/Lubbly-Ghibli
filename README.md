@@ -27,7 +27,7 @@ To half programmatically create an iOS app using the data provided from the [Stu
 ![Film Detail Screen](Documentation/FilmDetailScreen.png)
 
 ## Demo
-![WorkingDemo](Documentation/Demo.gif)Model
+![WorkingDemo](Documentation/Demo.gif)
 
 ## Tech Stack
 Swift, UIKit
